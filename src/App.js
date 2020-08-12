@@ -34,22 +34,6 @@ class App extends React.Component {
 	}
 
 	handleScrollToElement(event) {
-		// this.clearCanvas();
-		// this.setState({
-		// 	apple: {
-		// 		xPos: defXpos - event.srcElement.defaultView.scrollY / 6,
-		// 		yPos: defYpos - event.srcElement.defaultView.scrollY / 6,
-		// 		width: 200 + event.srcElement.defaultView.scrollY / 3,
-		// 		height: 200 + event.srcElement.defaultView.scrollY / 3,
-		// 	}
-		// })
-		// this.updateCanvas();
-		console.log(event.srcElement.defaultView.scrollY );
-		// if( event.srcElement.defaultView.scrollY >= 300 )  {
-		// 	this.setState({
-		// 		percent: 100 + event.srcElement.defaultView.scrollY * 20,
-		// 	})
-		// }
 		if( event.srcElement.defaultView.scrollY <= 1000 )  {
 			this.setState({
 				percent: 100 + event.srcElement.defaultView.scrollY * (1 + event.srcElement.defaultView.scrollY / 150),
