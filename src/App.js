@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import AppleImage from './images/apple.svg';
-const defXpos = 537.5, defYpos = 388.5;
+
 class App extends React.Component {
 	constructor(props) {
 		super (props);
@@ -19,20 +18,15 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		// this.updateCanvas();
 		window.addEventListener('scroll', (e) => this.handleScrollToElement(e));
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('scroll', (e) => this.handleScrollToElement(e));
-	}
-	
-	clearCanvas() {
-		const ctx = this.refs.aim_apple_img.getContext('2d');
-		const { xPos, yPos, width, height } = this.state.apple;
-		ctx.clearRect( xPos, yPos, width, height );
+		console.log(this.refs.vfAyba);
 	}
 
+	
 	handleScrollToElement(event) {
 		if( event.srcElement.defaultView.scrollY <= 1000 )  {
 			this.setState({
@@ -56,15 +50,7 @@ class App extends React.Component {
 	}
 
    	render() {
-		var myStyle1 = {
-			marginTop:'10px'
-		}
-		var dummyimg = {
-			height: '200px',
-			background: '#aaa'
-		}
-		const { percent, opacity } = this.state;
-		console.log(percent);
+		const { percent } = this.state;
       	return (		   
 			<section className="section section-a13 theme-dark" data-anim-scroll-group="A13" data-analytics-section-engagement="name:a13" >
 				<div className="a13-intro icon-intro enhanced" data-component-list="A13" data-analytics-xp="null">
@@ -76,7 +62,7 @@ class App extends React.Component {
 										<h2 className="eyebrow-icon">
 											<span className="visuallyhidden">A13 Bionic</span>
 										</h2>
-										<h3 className="section-headline section-headline-space-below typography-section-headline-super will-change" tabindex="-1" style={{transform: 'matrix(1, 0, 0, 1, 0, 0)', opacity: 0}}>
+										<h3 className="section-headline section-headline-space-below typography-section-headline-super will-change" style={{transform: 'matrix(1, 0, 0, 1, 0, 0)', opacity: 0}}>
 											iPhone&nbsp;11&nbsp;Pro called. 
 											<br className="large-show small-hide" /> It&nbsp;wants its&nbsp;chip&nbsp;back.
 										</h3>
@@ -95,12 +81,11 @@ class App extends React.Component {
 											<div style={{ backgroundColor: 'white', height: '100%', opacity: percent < 3000 ? 1 : 3000 / percent, position: 'relative', zIndex: 2 }}>
 
 											</div>
-											<video muted="" playsInline="" loop="10" 
+											<video muted={true} playsInline="" loop="1" ref="vfAyba" 
 												data-video-source-basepath="https://www.apple.com/105/media/us/iphone-se/2020/90024c0f-285a-4bf5-af04-2c38de97b06e/anim/arcade-loop/" 
-												aria-hidden="true" 
 												className="enhanced-only vp-large video-loaded video-can-play video-download-complete" 
 												src="https://www.apple.com/105/media/us/iphone-se/2020/90024c0f-285a-4bf5-af04-2c38de97b06e/anim/arcade-loop/large.mp4"
-												autoPlay={true}
+												autoPlay playsInline loop
 												>
 											</video>
 											<div className="inline-video-frame-start no-inversion">
@@ -113,7 +98,7 @@ class App extends React.Component {
 							</div>
 							<div className="hero-transition-overlay" data-anim-tween="{anchors;: [.section-a13], start: a0t - 100vh,end: a0t,opacity: [1, 0]}" style={{opacity: 0}}></div>
 							<div className="playback-control-container">
-								<button className="playback-control play disabled" data-aria-paused="Play animation of video gameplay" data-aria-playing="Pause animation of video gameplay" data-analytics-click-play="prop3: play - a13" data-analytics-title-play="play - a13" data-analytics-click-pause="prop3: pause - a13" data-analytics-title-pause="pause - a13" tabindex="0" aria-label="Play animation of video gameplay" data-analytics-click="prop3: pause - a13" data-analytics-title="pause - a13"></button>
+								<button className="playback-control play disabled" data-aria-paused="Play animation of video gameplay" data-aria-playing="Pause animation of video gameplay" data-analytics-click-play="prop3: play - a13" data-analytics-title-play="play - a13" data-analytics-click-pause="prop3: pause - a13" data-analytics-title-pause="pause - a13" aria-label="Play animation of video gameplay" data-analytics-click="prop3: pause - a13" data-analytics-title="pause - a13"></button>
 							</div>
 						</div>
 					</div>

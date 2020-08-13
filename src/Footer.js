@@ -17,11 +17,11 @@ class Footer extends React.Component {
       return (
 
 			<div class="jumbotron text-center" style={FooterStyle1}>
-				<a href={linkedinURL}><img src={linkedin} width="32" height="30" /></a>&nbsp;&nbsp;
-				<a href={twitterURL}><img src={twitter} width="32" height="30" /></a>&nbsp;&nbsp;
-				<a href={githubURL}><img src={github} width="32" height="30" /></a>&nbsp;&nbsp;
-				<a href={googleURL}><img src={google} width="32" height="30" /></a>	
-				<p>Copyright © 2003-2019 <a href={persCommunityURL}>rahamaths.appspot.com</a>, all rights reserved.</p>
+				<a href={linkedinURL}><img src={linkedin} width="32" height="30" alt="Not available"/></a>&nbsp;&nbsp;
+				<a href={twitterURL}><img src={twitter} width="32" height="30" alt="Not available"/></a>&nbsp;&nbsp;
+				<a href={githubURL}><img src={github} width="32" height="30" alt="Not available"/></a>&nbsp;&nbsp;
+				<a href={googleURL}><img src={google} width="32" height="30" alt="Not available"/></a>	
+				<p>Copyright ï¿½ 2003-2019 <a href={persCommunityURL}>rahamaths.appspot.com</a>, all rights reserved.</p>
 			</div>
       );
    }

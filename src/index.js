@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import HeaderHtml from './HeaderHtml.js';
-import Header from './Header.js';
-import Footer from './Footer.js';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
